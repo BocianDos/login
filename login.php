@@ -1,6 +1,5 @@
 <?php
 require_once 'db_config.php';
-// Jeśli użytkownik jest już zalogowany, przekieruj go na stronę z notatkami
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: dashboard.php");
     exit;
