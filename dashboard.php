@@ -1,7 +1,6 @@
 <?php
 require_once 'db_config.php';
 
-// Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
@@ -9,7 +8,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 $user_id = $_SESSION["user_id"];
 
-// Pobranie wszystkich notatek użytkownika
 $notes = [];
 $sql = "SELECT id, content, updated_at FROM notes WHERE user_id = ? ORDER BY updated_at DESC";
 if($stmt = $conn->prepare($sql)){
