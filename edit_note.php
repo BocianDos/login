@@ -1,13 +1,11 @@
 <?php
 require_once 'db_config.php';
 
-// Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
 }
 
-// Sprawdzenie czy ID notatki jest przekazane
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     header("location: dashboard.php");
     exit;
@@ -17,7 +15,6 @@ $note_id = $_GET['id'];
 $user_id = $_SESSION['user_id'];
 $note_content = "";
 
-// Pobranie treści notatki i weryfikacja, czy należy do zalogowanego użytkownika
 $sql = "SELECT content FROM notes WHERE id = ? AND user_id = ?";
 if ($stmt = $conn->prepare($sql)) {
     $stmt->bind_param("ii", $note_id, $user_id);
@@ -29,7 +26,6 @@ if ($stmt = $conn->prepare($sql)) {
         $stmt->fetch();
         $note_content = $content;
     } else {
-        // Użytkownik próbuje edytować nie swoją notatkę lub notatka nie istnieje
         header("location: dashboard.php");
         exit;
     }
