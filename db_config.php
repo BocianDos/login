@@ -6,7 +6,8 @@ define('DB_PASSWORD', '1qazXSW@'); // <-- Zmień na swoje hasło
 define('DB_NAME', 'aplikacja_db'); // <-- Zmień na nazwę swojej bazy danych
 
 // Utworzenie połączenia
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = new mysqli('localhost', 'root', '', 'aplikacja_db');
+
 
 // Sprawdzenie połączenia
 if ($conn->connect_error) {
