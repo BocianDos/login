@@ -26,18 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION["loggedin"] = true;
                     $_SESSION["user_id"] = $id;
                     $_SESSION["user_login"] = $login;
-                    
-                    // Komunikat o zalogowaniu (opcjonalnie, można od razu przekierować)
+
                     echo "<!DOCTYPE html><html><head><link rel='stylesheet' href='style.css'></head><body><div class='container'><div class='message success'>Zalogowano pomyślnie!</div></div><script>setTimeout(function(){ window.location.href = 'dashboard.php'; }, 1500);</script></body></html>";
 
                 } else {
-                    // Hasło niepoprawne
                     $_SESSION['error_message'] = "Nieprawidłowe hasło.";
                     header("location: login.php");
                 }
             }
         } else {
-            // Login nie istnieje
             $_SESSION['error_message'] = "Nie znaleziono konta o tym loginie.";
             header("location: login.php");
         }
