@@ -179,17 +179,4 @@ informacje.
 błędy były logowane do pliku na serwerze, a użytkownikowi wyświetlany był
 jedynie ogólny komunikat o błędzie.
 
-## 6. Podsumowanie i Wnioski
-
-Aplikacja do notatek jest solidnie napisanym, funkcjonalnym projektem, który
-poprawnie realizuje wszystkie postawione przed nim cele. Na szczególną pochwałę
-zasługuje konsekwentne stosowanie fundamentalnych zasad bezpieczeństwa aplikacji
-webowych, takich jak ochrona przed SQL Injection, XSS oraz bezpieczne
-przechowywanie haseł.
-Kod jest przejrzysty i logicznie podzielony na pliki o określonej odpowiedzialności.
-Stanowi to doskonałą bazę do dalszego rozwoju, na przykład poprzez wprowadzenie
-bardziej zaawansowanych funkcji (np. udostępnianie notatek) lub modernizację
-interfejsu z użyciem technologii takich jak AJAX, aby zapewnić płynniejszą interakcję
-bez konieczności przeładowywania całej strony.
-
 
